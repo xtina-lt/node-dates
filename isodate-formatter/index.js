@@ -1,9 +1,7 @@
 // OBJECTIVE ) In index.js, import your functions, run them, and log their outputs to the console
 import formatDate from './utils/formatDate.js'
-import chalk from 'chalk';
-                // can just do chalk
-                // added inverse for background and bold
-const customChalk = chalk.inverse.bold;
+// SECOND IMPORT SYNTAX OPTION
+import {logTitle, addFooter} from './utils/myUtils.js'
 
 
 // OBJECTIVE ) Test each string format with at least five different dates
@@ -15,28 +13,6 @@ let isoArr = [
     {title: "National Donut Day", iso:"2023-05-07", color: "pink"}
     ]
 
-const logTitle = (color, title) => {
-    let hash = '#'.repeat(11)
-
-    // chalk works best inside the console log
-    switch (color) {
-        case "orange":
-            console.log(`${hash} ${customChalk.rgb(254, 200, 154)(title.toUpperCase())} ${hash}`)
-            break;
-        case "red":
-            console.log(`${hash} ${customChalk.redBright(title.toUpperCase())} ${hash}`)
-            break;
-        case "green":
-            console.log(`${hash} ${customChalk.greenBright(title.toUpperCase())} ${hash}`)
-            break;
-        case "purple":
-            console.log(`${hash} ${customChalk.magenta(title.toUpperCase())} ${hash}`)
-            break;
-        case "pink":
-            console.log(`${hash} ${customChalk.rgb(15, 100, 204)(title.toUpperCase())} ${hash}`)
-            break;
-      }
-}
 
 // BONUS OBJECTIVE ) Log your output with different colors by installing chalk `npm install chalk`
 for (let i of isoArr) {
@@ -46,3 +22,5 @@ for (let i of isoArr) {
     console.log("Full    \t", formatDate.longFormat(i.iso))
     console.log("Short    \t", formatDate.shortFormat(i.iso))
 }
+addFooter()
+
